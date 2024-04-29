@@ -44,7 +44,7 @@ matrixmultiply = { version = "0.3.2", default-features = false, features=["cgemm
 
 serde = { version = "1.0", optional = true, default-features = false, features = ["alloc"] }
 rawpointer = { version = "0.2" }
-fixed = "1.27.0"
+fixed = { git = "https://github.com/AmitDIRTYC0W/fixed.git", features = ["num-traits"] }
 
 [dev-dependencies]
 defmac = "0.2"
