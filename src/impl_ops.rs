@@ -8,10 +8,10 @@
 
 use crate::dimension::DimMax;
 use crate::Zip;
+use fixed;
 use fixed::{FixedI128, FixedI16, FixedI32, FixedI64, FixedI8, FixedU128, FixedU16, FixedU32, FixedU64, FixedU8};
 use num_complex::Complex;
 use num_traits::Unsigned;
-use std::num::Wrapping;
 
 /// Elements that can be used as direct operands in arithmetic with arrays.
 ///
@@ -52,18 +52,18 @@ impl ScalarOperand for f32 {}
 impl ScalarOperand for f64 {}
 impl ScalarOperand for Complex<f32> {}
 impl ScalarOperand for Complex<f64> {}
-impl ScalarOperand for Wrapping<i8> {}
-impl ScalarOperand for Wrapping<u8> {}
-impl ScalarOperand for Wrapping<i16> {}
-impl ScalarOperand for Wrapping<u16> {}
-impl ScalarOperand for Wrapping<i32> {}
-impl ScalarOperand for Wrapping<u32> {}
-impl ScalarOperand for Wrapping<i64> {}
-impl ScalarOperand for Wrapping<u64> {}
-impl ScalarOperand for Wrapping<i128> {}
-impl ScalarOperand for Wrapping<u128> {}
-impl ScalarOperand for Wrapping<isize> {}
-impl ScalarOperand for Wrapping<usize> {}
+impl ScalarOperand for std::num::Wrapping<i8> {}
+impl ScalarOperand for std::num::Wrapping<u8> {}
+impl ScalarOperand for std::num::Wrapping<i16> {}
+impl ScalarOperand for std::num::Wrapping<u16> {}
+impl ScalarOperand for std::num::Wrapping<i32> {}
+impl ScalarOperand for std::num::Wrapping<u32> {}
+impl ScalarOperand for std::num::Wrapping<i64> {}
+impl ScalarOperand for std::num::Wrapping<u64> {}
+impl ScalarOperand for std::num::Wrapping<i128> {}
+impl ScalarOperand for std::num::Wrapping<u128> {}
+impl ScalarOperand for std::num::Wrapping<isize> {}
+impl ScalarOperand for std::num::Wrapping<usize> {}
 impl<Frac: 'static> ScalarOperand for FixedI8<Frac> {}
 impl<Frac: 'static> ScalarOperand for FixedU8<Frac> {}
 impl<Frac: 'static> ScalarOperand for FixedI16<Frac> {}
@@ -74,16 +74,16 @@ impl<Frac: 'static> ScalarOperand for FixedI64<Frac> {}
 impl<Frac: 'static> ScalarOperand for FixedU64<Frac> {}
 impl<Frac: 'static> ScalarOperand for FixedI128<Frac> {}
 impl<Frac: 'static> ScalarOperand for FixedU128<Frac> {}
-impl<Frac: 'static> ScalarOperand for Wrapping<FixedI8<Frac>> {}
-impl<Frac: 'static> ScalarOperand for Wrapping<FixedU8<Frac>> {}
-impl<Frac: 'static> ScalarOperand for Wrapping<FixedI16<Frac>> {}
-impl<Frac: 'static> ScalarOperand for Wrapping<FixedU16<Frac>> {}
-impl<Frac: 'static> ScalarOperand for Wrapping<FixedI32<Frac>> {}
-impl<Frac: 'static> ScalarOperand for Wrapping<FixedU32<Frac>> {}
-impl<Frac: 'static> ScalarOperand for Wrapping<FixedI64<Frac>> {}
-impl<Frac: 'static> ScalarOperand for Wrapping<FixedU64<Frac>> {}
-impl<Frac: 'static> ScalarOperand for Wrapping<FixedI128<Frac>> {}
-impl<Frac: 'static> ScalarOperand for Wrapping<FixedU128<Frac>> {}
+impl<Frac: 'static> ScalarOperand for fixed::Wrapping<FixedI8<Frac>> {}
+impl<Frac: 'static> ScalarOperand for fixed::Wrapping<FixedU8<Frac>> {}
+impl<Frac: 'static> ScalarOperand for fixed::Wrapping<FixedI16<Frac>> {}
+impl<Frac: 'static> ScalarOperand for fixed::Wrapping<FixedU16<Frac>> {}
+impl<Frac: 'static> ScalarOperand for fixed::Wrapping<FixedI32<Frac>> {}
+impl<Frac: 'static> ScalarOperand for fixed::Wrapping<FixedU32<Frac>> {}
+impl<Frac: 'static> ScalarOperand for fixed::Wrapping<FixedI64<Frac>> {}
+impl<Frac: 'static> ScalarOperand for fixed::Wrapping<FixedU64<Frac>> {}
+impl<Frac: 'static> ScalarOperand for fixed::Wrapping<FixedI128<Frac>> {}
+impl<Frac: 'static> ScalarOperand for fixed::Wrapping<FixedU128<Frac>> {}
 
 macro_rules! impl_binary_op(
     ($trt:ident, $operator:tt, $mth:ident, $iop:tt, $doc:expr) => (
